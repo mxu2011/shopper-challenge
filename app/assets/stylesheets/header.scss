@@ -1,0 +1,33 @@
+@import '_variables';
+@import '_mixins';
+
+.header {
+  width: 100%;
+  padding: $small-padding 0;
+  border-bottom: 1px solid $medium-gray;
+  .header-logo {
+    @include flex(auto);
+    .logo {
+      width: 109px;
+      height: 20px;
+      background-image: image-url('instacart-logo@1x.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .header-nav {
+    @include flex(1 0);
+    text-align: right;
+    .header-link, .header-button {
+      vertical-align: center;
+      line-height: 1;
+    }
+    .header-link {
+      font-size: $small-font;
+      color: $medium-gray;
+    }
+    .header-button {
+      margin-left: $small-padding;
+    }
+  }
+}

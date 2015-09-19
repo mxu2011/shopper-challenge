@@ -1,0 +1,37 @@
+@import '_variables';
+@import '_mixins';
+
+/* Landing Page */
+.landing-container {
+
+  .landing-section {
+    padding: $large-padding 0;
+  }
+
+  .landing-hero {
+    height: 500px;
+    color: #FFF;
+    background-repeat: no-repeat;
+    background-image: image-url('landing-bg-small.jpg');
+  }
+
+  @include respond-to(medium) {
+    .landing-hero {
+      background-image: image-url('landing-bg-medium.jpg');
+    }
+  }
+
+  @include respond-to(large) {
+    .landing-hero {
+      background-size: cover;
+      background-image: image-url('landing-bg-large.jpg');
+    }
+  }
+
+}
+
+/* Create Page */
+
+/* Background Check Page */
+
+/* Confirm Page */

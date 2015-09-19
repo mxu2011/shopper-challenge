@@ -1,0 +1,29 @@
+@import '_variables';
+
+.button {
+  display: inline-block;
+  border: 2px solid $medium-gray;
+  border-radius: 4px;
+  color: $medium-gray;
+  padding: $tiny-padding $medium-padding;
+  text-transform: uppercase;
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+  &.positive {
+    border-color: $green;
+    color: $green;
+  }
+
+  &.negative {
+    border-color: $red;
+    color: $red;
+  }
+
+  &.large {
+    padding: $tiny-padding $large-padding;
+  }
+
+  &.small {
+    padding: $tiny-padding $small_padding;
+  }
+}

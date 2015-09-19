@@ -1,0 +1,36 @@
+@import '_variables';
+
+@mixin generate-columns($type) {
+  @for $i from 1 to $num-columns+1 {
+    .col-#{$type}-#{$i} {
+      flex: 0 0 100% * ($i / $num-columns);
+    }
+  }
+}
+
+@mixin respond-to($media) {
+  @if $media == medium {
+    @media only screen and (min-width: 40em) { @content; }
+  }
+  @else if $media == large {
+    @media only screen and (min-width: 80em) { @content; }
+  }
+  @else if $media == retina {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { @content; }
+  }
+}
+
+@mixin align($position) {
+  align-items: $position;
+}
+
+@mixin display($type) {
+  display: $type;
+  -webkit-display: $type;
+}
+
+@mixin flex($values) {
+  -ms-flex: $values;
+  -webkit-flex: $values;
+  flex: $values;
+}

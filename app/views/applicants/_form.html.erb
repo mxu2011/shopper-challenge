@@ -1,0 +1,66 @@
+  <%= form_for @applicant, :html => { :class => "form-horizontal applicant" } do |f| %>
+
+    <% if @applicant.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@applicant.errors.count, "error") %> prohibited this applicant from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @applicant.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :region, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:region, options_for_select(Applicant::REGIONS)) %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :phone_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:phone_type, options_for_select(Applicant::PHONE_TYPES)) %>
+    </div>
+  </div>
+
+  <div class="top-buffer">
+    <% if logged_in? %>
+      <%= f.submit nil, :value => "Update Application", :class => 'btn btn-primary btn-success' %>
+      <%= link_to 'logout', logout_path, method: :post ,:class => 'btn btn-sm'%>
+    <% else %>
+      <%= f.submit nil, :value => "Create Application", :class => 'btn btn-primary btn-success' %>
+    <% end %>
+
+  </div>
+
+<% end %>

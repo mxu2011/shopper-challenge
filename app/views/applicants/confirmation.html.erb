@@ -1,0 +1,21 @@
+  <div class="container">
+  <div class="panel panel-default">
+  <div class="panel-heading"><h3>Thanks for applying!</h3></div>
+  <div class="panel-body">
+    <div class="bs-example">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-6">
+            We will get back to you as soon as possible.
+          </div>
+          <!-- <%= link_to 'Authorize', background_authorize_applicants_path, method: :post %> -->
+        </div>
+        <div class="row">
+          <%= link_to 'Edit Application',
+                    edit_applicant_path(current_applicant),
+                    :class => 'btn btn-lg btn-success' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

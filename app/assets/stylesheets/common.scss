@@ -1,0 +1,22 @@
+@import '_variables';
+@import '_mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  max-width: $small-max-width;
+  margin: 0 auto;
+  padding: 0 $small-padding;
+  @include display(flex);
+  @include generate-columns('sm');
+  @include align(center);
+}
+
+@include respond-to(medium) {
+  .row {
+    max-width: $medium-max-width;
+    @include generate-columns('md');
+  }
+}
