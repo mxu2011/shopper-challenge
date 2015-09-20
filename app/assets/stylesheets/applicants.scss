@@ -5,7 +5,7 @@
 .landing-container {
 
   .landing-section {
-    padding: $large-padding 0;
+    padding: 7em 0;
   }
 
   .landing-hero {
@@ -13,6 +13,10 @@
     color: #FFF;
     background-repeat: no-repeat;
     background-image: image-url('landing-bg-small.jpg');
+  }
+
+  .landing-heading, .landing-subheading {
+    margin-bottom: $medium-padding;
   }
 
   @include respond-to(medium) {

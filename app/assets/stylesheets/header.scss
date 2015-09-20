@@ -6,7 +6,7 @@
   padding: $small-padding 0;
   border-bottom: 1px solid $medium-gray;
   .header-logo {
-    @include flex(auto);
+    @include flex(0 1);
     .logo {
       width: 109px;
       height: 20px;
@@ -24,7 +24,6 @@
     }
     .header-link {
       font-size: $small-font;
-      color: $medium-gray;
     }
     .header-button {
       margin-left: $small-padding;

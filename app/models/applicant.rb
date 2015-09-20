@@ -10,4 +10,12 @@ class Applicant < ActiveRecord::Base
   validates :phone_type, presence: true
   validates :workflow_state, presence: true
   validates :region, presence: true
+
+  scope :between_date_ranges, -> (options = {}) do
+    start_date = options.fetch(:start_date, 1.week.ago).in_time_zone.to_date
+    end_date = options.fetch(:end_date, start_date + 1.week).in_time_zone.to_date.end_of_day
+    attribute = options.fetch(:attribute, :created_at)
+
+    where("#{attribute} >= ? AND #{attribute} <=?", start_date, end_date)
+  end
 end

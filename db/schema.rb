@@ -11,21 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108011628) do
+ActiveRecord::Schema.define(version: 20150919221725) do
 
   create_table "applicants", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "region"
-    t.string   "phone"
-    t.string   "email"
-    t.string   "phone_type"
-    t.string   "source"
-    t.boolean  "over_21"
-    t.text     "reason"
-    t.string   "workflow_state"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "first_name",     limit: 255
+    t.string   "last_name",      limit: 255
+    t.string   "region",         limit: 255
+    t.string   "phone",          limit: 255
+    t.string   "email",          limit: 255
+    t.string   "phone_type",     limit: 255
+    t.string   "source",         limit: 255
+    t.boolean  "over_21",        limit: 1
+    t.text     "reason",         limit: 65535
+    t.string   "workflow_state", limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
+
+  add_index "applicants", ["created_at"], name: "index_applicants_on_created_at", using: :btree
 
 end

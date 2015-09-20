@@ -1,15 +1,15 @@
 class FunnelsController < ApplicationController
+  include FunnelsHelper
+
   def index
-    @start_date = params[:start_date].to_date
-    @end_date = params[:end_date].to_date
+    options = format_params(params)
 
-    data = aggregate_data
+    funnels = query(options)
 
-    # so sun = 0, mon = 1
-    @funnel = data
+    @funnel = funnels;
 
     respond_to do |format|
-      format.html { @chart_funnel = formatted_funnel }
+      format.html { @chart_funnel = funnels}
       format.json { render json: @funnel }
     end
   end
@@ -32,14 +32,5 @@ class FunnelsController < ApplicationController
         values: v
       }
     end
-  end
-
-  def aggregate_data
-    data = Applicant.where(created_at: @start_date..@end_date)
-
-    data
-  end
-
-  def weeks_between
   end
 end

@@ -8,15 +8,24 @@
   padding: $tiny-padding $medium-padding;
   text-transform: uppercase;
   font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  transition: background-color 0.125s ease-out, color 0.125s ease-out;
 
   &.positive {
     border-color: $green;
     color: $green;
+    &:hover {
+      background-color: $green;
+      color: #FFF;
+    }
   }
 
   &.negative {
     border-color: $red;
     color: $red;
+    &:hover {
+      background-color: $red;
+      color: #FFF;
+    }
   }
 
   &.large {

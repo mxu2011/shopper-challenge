@@ -1,3 +1,5 @@
+let Link = ReactRouter.Link;
+
 class Header extends React.Component {
   render() {
     return (
