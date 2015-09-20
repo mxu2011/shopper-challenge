@@ -12,4 +12,10 @@ class ApplicantsController < ApplicationController
   def update
     @applicant = Applicant.find(params[:id])
   end
+
+  private
+
+    def applicant_params
+      params.require(:applicant).permit(:first_name, :last_name, :email, :workflow_state, :region, :phone, :phone_type)
+    end
 end

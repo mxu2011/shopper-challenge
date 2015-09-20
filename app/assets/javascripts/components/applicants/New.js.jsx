@@ -1,12 +1,10 @@
 class ApplicantsNew extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
   render() {
     return (
-      <div>
-        <RouteHandler />
-      </div>
+      <RouteHandler {...this.props} />
     );
   }
 }

@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
+    @app_data = {
+      "phone_types" => Applicant::PHONE_TYPES,
+      "regions"     => Applicant::REGIONS,
+      "current_applicant" => @current_applicant
+    }
+
     @location_path = "/#{params[:path]}"
   end
 end

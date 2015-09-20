@@ -16,6 +16,28 @@ class ApplicantsIndex extends React.Component {
             </div>
           </div>
         </section>
+        <section className="landing-section">
+          <div className="row center">
+            <div className="col-sm-12 col-md-10 col-lg-8">
+              <div className="row">
+                <div className="col-sm-12">
+                  <h2 className="text-center">What's it all about</h2>
+                </div>
+              </div>
+              <div className="row landing-text-container">
+                <div className="col-sm-4 landing-text">
+                  <p>Adipisicing elit possimus sed sed. Est necessitatibus odio blanditiis nulla ducimus iusto, sit cupiditate ab. Laboriosam quae minus adipisci iusto quia. Velit laudantium?</p>
+                </div>
+                <div className="col-sm-4 landing-text">
+                  <p>Adipisicing elit iste hic sequi dolore possimus sed sed. Est necessitatibus odio blanditiis nulla ducimus iusto, sit cupiditate ab. Laboriosam quae minus adipisci iusto quia. Velit laudantium?</p>
+                </div>
+                <div className="col-sm-4 landing-text">
+                  <p>Adipisicing elit sequi dolore possimus sed sed. Est necessitatibus odio blanditiis nulla ducimus iusto, sit cupiditate ab. Laboriosam quae minus adipisci iusto quia. Velit laudantium?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

@@ -12,6 +12,11 @@
   @include display(flex);
   @include generate-columns('sm');
   @include align(center);
+
+  &.center {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
 }
 
 @include respond-to(medium) {

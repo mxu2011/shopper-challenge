@@ -2,6 +2,7 @@
 
 .button {
   display: inline-block;
+  background-color: transparent;
   border: 2px solid $medium-gray;
   border-radius: 4px;
   color: $medium-gray;
@@ -9,6 +10,15 @@
   text-transform: uppercase;
   font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
   transition: background-color 0.125s ease-out, color 0.125s ease-out;
+
+  &:hover {
+    background-color: $medium-gray;
+    color: #FFF;
+  }
+
+  &:hover, &:active, &:focus {
+    outline: none;
+  }
 
   &.positive {
     border-color: $green;
@@ -28,8 +38,13 @@
     }
   }
 
+  &.expand {
+    width: 100%;
+    display: block;
+  }
+
   &.large {
-    padding: $tiny-padding $large-padding;
+    padding: $small-padding $large-padding;
   }
 
   &.small {
