@@ -19,9 +19,10 @@ class ApplicantsForm extends React.Component {
       data: { applicant: obj },
       success: data => {
         this.setState({ applicant: data });
-        this.context.router.transitionTo('check');
+        this.context.router.transitionTo('check', { applicant: data });
         return false;
-      }, error: data => {
+      }, error: err => {
+        console.log(err);
         return false;
       }
     });

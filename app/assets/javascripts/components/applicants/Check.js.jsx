@@ -2,11 +2,37 @@ class ApplicantsCheck extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    debugger;
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.context.router.transitionTo('complete');
+
+    // Commented out for now until I figure out what to do
+    //this.setState(function(prev, current) {
+      //var new_applicant = Object.create({}, prev.applicant);
+      //new_applicant.workflow_state = "onbarding_requested";
+      //return { applicant: new_applicant };
+    //});
+
+    //var that = this;
+
+    //$.ajax({
+      //type: "PUT",
+      //url: "/applicants/" + that.state.applicant.id,
+      //data: { applicant: this.state },
+      //success: data => {
+        //this.setState({ applicant: data });
+        //this.context.router.transitionTo('complete', { applicant: this.state });
+        //return false;
+      //},
+      //error: err => {
+        //console.log(err);
+        //return false;
+      //}
+    //});
   }
 
   render() {
